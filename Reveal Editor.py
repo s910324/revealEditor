@@ -9,7 +9,7 @@ class Reveal(QMainWindow):
 	def __init__(self, parent = None):
 		super(Reveal, self).__init__(parent)
 		view = QtWebKit.QWebView()
-		view.load(QtCore.QUrl('/home/rawr/Downloads/reveal.js-3.1.0/index (copy).html'))
+		view.load(QtCore.QUrl('./index (copy).html'))
 		self.setUpToolBar()
 		self.setCentralWidget(view)
 
