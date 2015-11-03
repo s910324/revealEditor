@@ -10,6 +10,7 @@ class Reveal(QMainWindow):
 		super(Reveal, self).__init__(parent)
 		view = QtWebKit.QWebView()
 		view.load(QtCore.QUrl('./index (copy).html'))
+		self.frame = view.page().mainFrame()
 		self.setUpToolBar()
 		self.setCentralWidget(view)
 
@@ -18,9 +19,10 @@ class Reveal(QMainWindow):
 		self.addToolBar( Qt.BottomToolBarArea , self.toolbar)
 		addDivAction = QAction('add div', self)
 		self.toolbar.addAction(addDivAction)
-		# addDivAction.triggered.connect(self.addDiv)
+		addDivAction.triggered.connect(self.addDiv)
 
-	# def addDiv(self):
+	def addDiv(self):
+		print self.frame.evaluateJavaScript('addTextWidget();')
 
 if __name__ == '__main__':			
 	app = QtGui.QApplication(sys.argv)

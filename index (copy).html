@@ -40,15 +40,29 @@
 				padding:      0.5em; 
 				z-index:      top;
 				text-align:   left;
+				background-color: #777777;
 			}
 
 		</style>
 		<script>
 			$(function() {
 				$( ".draggable" ).draggable({ cursor: "move"});
-				$( ".draggable" ).resizable();
-
+				$( ".draggable" ).resizable(); 
 			});
+		</script>
+
+		<script language="javascript">
+			function addTextWidget(){
+				var dDiv             = document.createElement('div');
+				dDiv.className       = "draggable";
+				dDiv.innerHTML       = "<div name=\"editor\" contenteditable=\"false\">some editable text. Double click to edit</div>";
+				document.getElementsByTagName('section')[0].appendChild(dDiv);
+				$(function() {
+					$( ".draggable" ).draggable({ cursor: "move"});
+					$( ".draggable" ).resizable(); 
+				});
+				return 0;
+			}
 		</script>
 
 		<script type="text/javascript">//<![CDATA[
