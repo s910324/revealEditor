@@ -14,5 +14,6 @@
 |Python2|>=2.7.3|
 |PySide|>=1.2.2|
 |RevealJs Core| 3.2.0 (included)|
+|JQuery Core| 2.1.4 (included)|
 
 
